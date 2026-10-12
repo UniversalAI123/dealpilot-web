@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-ICVlsRvRvjJ00nVG8rDE2YVuM6aXS3zNiW7JyARQvPQ='; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; connect-src 'self' https://vpic.nhtsa.dot.gov; frame-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'none'" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="referrer" content="no-referrer" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#f6f7f9" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0b1220" media="(prefers-color-scheme: dark)" />
+    <meta name="description" content="Check the deal before you buy — wherever you found the car. Deterministic deal math, evidence tracking, and shareable reports. Saved on this device." />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232F6BFF'/%3E%3Cpath d='M7.3 21.6a9.6 9.6 0 1 1 17.4 0' fill='none' stroke='%23fff' stroke-width='2.2' stroke-linecap='round'/%3E%3Cpath d='M16 19.4l4.6-5.6' stroke='%23fff' stroke-width='2.4' stroke-linecap='round'/%3E%3Ccircle cx='16' cy='19.4' r='2.1' fill='%23fff'/%3E%3C/svg%3E"
+    />
+    <title>DealPilot — Check the deal before you buy</title>
+    <script>
+      // Apply the stored theme before first paint (no flash). Mirrors src/ui/app/theme.ts.
+      (function () {
+        try {
+          var t = localStorage.getItem('dealpilot:theme');
+          if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+        } catch (e) {}
+      })();
+    </script>
+    <style>
+      /* Pre-CSS paint: avoid a white flash in dark mode before the stylesheet loads. */
+      html { background: #f6f7f9; }
+      @media (prefers-color-scheme: dark) { html:not([data-theme='light']) { background: #0b1220; } }
+      html[data-theme='dark'] { background: #0b1220; }
+    </style>
+    <script type="module" crossorigin src="/dealpilot-web/assets/index-wg_jpSm-.js"></script>
+    <link rel="stylesheet" crossorigin href="/dealpilot-web/assets/index-C6REXG68.css">
+  </head>
+  <body>
+    <noscript>DealPilot needs JavaScript to run. Your deals are saved in this browser only.</noscript>
+    <div id="root"></div>
+  </body>
+</html>
