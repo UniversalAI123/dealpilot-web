@@ -1,0 +1,606 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!--
+      Self-contained on purpose: no scripts, no external files, no fonts to fetch.
+      The policy below allows nothing except this page's own <style> and the data: icon.
+      Keep it in step with appstore/privacy/APP-PRIVACY.md and src/ui/app/externalOrigins.ts
+      (scripts/asc-upload-metadata.mjs checks that every destination the iOS app can contact is named here).
+    -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; img-src data:; base-uri 'none'; form-action 'none'" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#f1efea" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#05070a" media="(prefers-color-scheme: dark)" />
+    <meta name="referrer" content="no-referrer" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta
+      name="description"
+      content="DealPilot's privacy policy: no accounts, no ads, no tracking. Deals stay on your device. Everything that can leave it, and when."
+    />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Crect%20width='32'%20height='32'%20rx='8'%20fill='%230D0E10'/%3E%3Cpath%20d='M8%2023.08A9.23%209.23%200%201%201%2024%2023.08'%20fill='none'%20stroke='%23F1EFEA'%20stroke-opacity='.45'%20stroke-width='2'%20stroke-linecap='round'/%3E%3Cpath%20d='M8%2023.08A9.23%209.23%200%200%201%2021.93%2011.39'%20fill='none'%20stroke='%235CE1F2'%20stroke-width='2.4'%20stroke-linecap='round'/%3E%3Cpath%20d='M16%2018.46L20.43%2013.18'%20stroke='%23F1EFEA'%20stroke-width='2.4'%20stroke-linecap='round'/%3E%3Ccircle%20cx='16'%20cy='18.46'%20r='2.1'%20fill='%23F1EFEA'/%3E%3C/svg%3E"
+    />
+    <title>DealPilot privacy policy</title>
+    <style>
+      /* "Instrument Cluster" tokens, copied from src/ui/styles/tokens.css (light = daylight paper, dark = night drive). */
+      :root {
+        color-scheme: light;
+        --bg: #f1efea;
+        --surface: #fcfbf8;
+        --surface-2: #f5f3ee;
+        --border: #e0dcd3;
+        --border-strong: #cbc6bb;
+        --text: #0d0e10;
+        --text-muted: #3c3f46;
+        --text-subtle: #5b5e66;
+        --accent: #006a7e;
+        --accent-mark: #00869e;
+        --accent-soft: rgba(0, 134, 158, 0.1);
+        --focus: #006a7e;
+        --logo-bg: #0d0e10;
+        --logo-ink: #f1efea;
+        --shadow: 0 1px 0 rgba(13, 14, 16, 0.02), 0 1px 2px rgba(13, 14, 16, 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+        --font-sans: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        --font-mono: ui-monospace, 'SF Mono', SFMono-Regular, Menlo, Consolas, monospace;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root:not([data-theme='light']) {
+          color-scheme: dark;
+          --bg: #05070a;
+          --surface: #0a0e14;
+          --surface-2: #0e131a;
+          --border: #19202a;
+          --border-strong: #273041;
+          --text: #edf2f7;
+          --text-muted: #a9b4c4;
+          --text-subtle: #8693a8;
+          --accent: #5ce1f2;
+          --accent-mark: #5ce1f2;
+          --accent-soft: rgba(92, 225, 242, 0.09);
+          --focus: #5ce1f2;
+          --logo-bg: #edf2f7;
+          --logo-ink: #05070a;
+          --shadow: none;
+        }
+      }
+      :root[data-theme='dark'] {
+        color-scheme: dark;
+        --bg: #05070a;
+        --surface: #0a0e14;
+        --surface-2: #0e131a;
+        --border: #19202a;
+        --border-strong: #273041;
+        --text: #edf2f7;
+        --text-muted: #a9b4c4;
+        --text-subtle: #8693a8;
+        --accent: #5ce1f2;
+        --accent-mark: #5ce1f2;
+        --accent-soft: rgba(92, 225, 242, 0.09);
+        --focus: #5ce1f2;
+        --logo-bg: #edf2f7;
+        --logo-ink: #05070a;
+        --shadow: none;
+      }
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+      html {
+        background: var(--bg);
+        -webkit-text-size-adjust: 100%;
+        text-size-adjust: 100%;
+      }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--text);
+        font-family: var(--font-sans);
+        font-size: 16px;
+        line-height: 1.55;
+        overflow-wrap: anywhere;
+      }
+      a {
+        color: var(--accent);
+        text-decoration: underline;
+        text-decoration-thickness: 1px;
+        text-underline-offset: 0.18em;
+      }
+      a:hover {
+        text-decoration-thickness: 2px;
+      }
+      a:focus-visible {
+        outline: 2px solid var(--focus);
+        outline-offset: 2px;
+        border-radius: 4px;
+      }
+      .skip {
+        position: absolute;
+        left: 16px;
+        top: -100px;
+        background: var(--surface);
+        padding: 10px 14px;
+        border: 1px solid var(--border-strong);
+        border-radius: 8px;
+        z-index: 2;
+      }
+      .skip:focus {
+        top: 12px;
+      }
+      .wrap {
+        max-width: 760px;
+        margin: 0 auto;
+        padding-left: max(16px, env(safe-area-inset-left));
+        padding-right: max(16px, env(safe-area-inset-right));
+      }
+      .site-header {
+        border-bottom: 1px solid var(--border);
+        background: var(--bg);
+      }
+      .site-header .wrap {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 4px 16px;
+        min-height: 60px;
+        padding-top: env(safe-area-inset-top);
+      }
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        min-height: 44px;
+        color: var(--text);
+        text-decoration: none;
+        font-weight: 650;
+        font-size: 17px;
+        letter-spacing: -0.01em;
+      }
+      .logo__tile {
+        fill: var(--logo-bg);
+      }
+      .logo__scale {
+        fill: none;
+        stroke: var(--logo-ink);
+        stroke-opacity: 0.45;
+        stroke-width: 2;
+        stroke-linecap: round;
+      }
+      .logo__arc {
+        fill: none;
+        stroke: var(--accent-mark);
+        stroke-width: 2.4;
+        stroke-linecap: round;
+      }
+      .logo__needle {
+        stroke: var(--logo-ink);
+        stroke-width: 2.4;
+        stroke-linecap: round;
+      }
+      .logo__hub {
+        fill: var(--logo-ink);
+      }
+      .site-nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0 4px;
+      }
+      .site-nav a,
+      .site-footer a {
+        display: inline-flex;
+        align-items: center;
+        min-height: 44px;
+        padding: 0 10px;
+        border-radius: 8px;
+      }
+      .site-nav a[aria-current='page'] {
+        color: var(--text);
+        text-decoration: none;
+        font-weight: 600;
+        box-shadow: inset 0 -2px 0 var(--accent-mark);
+        border-radius: 0;
+      }
+      main {
+        padding-top: 28px;
+        padding-bottom: 40px;
+      }
+      .eyebrow {
+        margin: 0 0 8px;
+        font-family: var(--font-mono);
+        font-size: 12px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--text-subtle);
+      }
+      h1 {
+        margin: 0 0 12px;
+        font-size: 30px;
+        line-height: 1.15;
+        letter-spacing: -0.02em;
+        font-weight: 680;
+      }
+      .lede {
+        margin: 0 0 24px;
+        font-size: 18px;
+        color: var(--text-muted);
+      }
+      .card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        box-shadow: var(--shadow);
+        padding: 20px;
+        margin: 0 0 16px;
+      }
+      .card--accent {
+        border-left: 3px solid var(--accent-mark);
+      }
+      h2 {
+        margin: 0 0 10px;
+        font-size: 20px;
+        line-height: 1.25;
+        letter-spacing: -0.01em;
+        font-weight: 650;
+      }
+      h3 {
+        margin: 18px 0 6px;
+        font-size: 16px;
+        line-height: 1.3;
+        font-weight: 650;
+      }
+      p,
+      ul,
+      dl {
+        margin: 0 0 12px;
+      }
+      .card > :last-child {
+        margin-bottom: 0;
+      }
+      ul {
+        padding-left: 1.25em;
+      }
+      li + li {
+        margin-top: 6px;
+      }
+      .muted {
+        color: var(--text-muted);
+      }
+      .small {
+        font-size: 14px;
+      }
+      .mono {
+        font-family: var(--font-mono);
+        font-size: 0.92em;
+      }
+      .flows {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .flow {
+        border-top: 1px solid var(--border);
+        padding: 14px 0;
+      }
+      .flow:first-child {
+        border-top: 0;
+        padding-top: 4px;
+      }
+      .flow:last-child {
+        padding-bottom: 0;
+      }
+      .flow__name {
+        margin: 0 0 6px;
+        font-weight: 650;
+      }
+      .flow__row {
+        display: grid;
+        grid-template-columns: 4.5em 1fr;
+        gap: 2px 10px;
+        margin: 0;
+      }
+      .flow__row + .flow__row {
+        margin-top: 4px;
+      }
+      .caption {
+        font-family: var(--font-mono);
+        font-size: 11px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--text-subtle);
+        padding-top: 0.3em;
+      }
+      .facts {
+        list-style: none;
+        padding: 0;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 8px;
+      }
+      .facts li {
+        margin: 0;
+        background: var(--surface-2);
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        padding: 10px 12px;
+        font-weight: 600;
+      }
+      .facts li::before {
+        content: '\2713\00a0';
+        color: var(--accent);
+      }
+      .site-footer {
+        border-top: 1px solid var(--border);
+        padding-bottom: max(24px, env(safe-area-inset-bottom));
+      }
+      .site-footer .wrap {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 0 8px;
+        padding-top: 12px;
+      }
+      .site-footer p {
+        margin: 0 10px 0 0;
+        color: var(--text-subtle);
+        font-size: 14px;
+      }
+      @media (max-width: 520px) {
+        h1 {
+          font-size: 24px;
+        }
+        .lede {
+          font-size: 17px;
+        }
+        .card {
+          padding: 16px;
+        }
+        .flow__row {
+          grid-template-columns: 1fr;
+        }
+      }
+      @media print {
+        .site-header,
+        .site-footer,
+        .skip {
+          display: none;
+        }
+        .card {
+          box-shadow: none;
+          break-inside: avoid;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to the policy</a>
+    <header class="site-header">
+      <div class="wrap">
+        <a class="brand" href="./">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="28" height="28" aria-hidden="true" focusable="false">
+            <rect class="logo__tile" width="32" height="32" rx="8" />
+            <path class="logo__scale" d="M8 23.08A9.23 9.23 0 1 1 24 23.08" />
+            <path class="logo__arc" d="M8 23.08A9.23 9.23 0 0 1 21.93 11.39" />
+            <path class="logo__needle" d="M16 18.46L20.43 13.18" />
+            <circle class="logo__hub" cx="16" cy="18.46" r="2.1" />
+          </svg>
+          <span>DealPilot</span>
+        </a>
+        <nav class="site-nav" aria-label="DealPilot help pages">
+          <a href="support.html">Support</a>
+          <a href="privacy.html" aria-current="page">Privacy</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" class="wrap">
+      <p class="eyebrow">Privacy policy · Effective October 14, 2026</p>
+      <h1>Your deals stay on your device</h1>
+      <p class="lede">
+        DealPilot has no accounts, no ads and no tracking. This policy covers the DealPilot iPhone app and the DealPilot web version. It lists everything that
+        can leave your device, and when.
+      </p>
+
+      <section class="card card--accent" aria-labelledby="short">
+        <h2 id="short">In short</h2>
+        <ul class="facts">
+          <li>No account</li>
+          <li>No ads</li>
+          <li>No analytics</li>
+          <li>No tracking</li>
+          <li>Deals stored on your device</li>
+          <li>Nothing sold or shared</li>
+        </ul>
+        <p class="muted small">
+          The only data collected is anonymous purchase history for the subscription, handled by Apple and RevenueCat. It isn't linked to who you are.
+        </p>
+      </section>
+
+      <section class="card" aria-labelledby="who">
+        <h2 id="who">Who we are</h2>
+        <p>
+          DealPilot is made by Universal AI LLC, a Maryland, USA company ("we"). Questions about this policy go to
+          <a href="mailto:contact@universalaillc.com">contact@universalaillc.com</a>.
+        </p>
+      </section>
+
+      <section class="card" aria-labelledby="stays">
+        <h2 id="stays">What stays on your device</h2>
+        <p>Everything you enter is stored only on your device. We have no server copy of it and can't see it.</p>
+        <ul>
+          <li>Your deals: vehicle facts, prices, cost lines, checks, notes, comparables and the results DealPilot works out.</li>
+          <li>Snapshots of a deal, up to 20 per deal.</li>
+          <li>
+            Screenshots and documents you choose to keep with a deal, for the period you pick (7, 30 or 90 days; 30 unless you change it). They are deleted on
+            that date.
+          </li>
+          <li>Your settings, such as the theme and your usual numbers.</li>
+          <li>In the iPhone app, deadline reminders you turn on, and a second copy of your deals in the app's private storage so iOS doesn't clear them.</li>
+          <li>If you turn on pilot mode, a usage log of the newest 10,000 events. It stays on the device and is never sent.</li>
+        </ul>
+        <p class="muted small">
+          Like any app's data, this can be included in your iPhone's own iCloud or computer backup. That backup is controlled by you and Apple, not by us.
+        </p>
+      </section>
+
+      <section class="card" aria-labelledby="leaves">
+        <h2 id="leaves">What leaves your device, and when</h2>
+        <p>Nothing leaves without you doing something first, except the subscription check described below.</p>
+        <ul class="flows">
+          <li class="flow">
+            <p class="flow__name">NHTSA vPIC, the U.S. government's VIN decoder</p>
+            <p class="flow__row"><span class="caption">Where</span> <span class="mono">vpic.nhtsa.dot.gov</span></p>
+            <p class="flow__row"><span class="caption">What</span> <span>The VIN, and nothing else.</span></p>
+            <p class="flow__row"><span class="caption">When</span> <span>Only when you tap Decode. NHTSA's own privacy policy applies to its service.</span></p>
+          </li>
+          <li class="flow">
+            <p class="flow__name">NHTSA recall lookup</p>
+            <p class="flow__row"><span class="caption">Where</span> <span class="mono">nhtsa.gov</span></p>
+            <p class="flow__row"><span class="caption">What</span> <span>The VIN, in the address of the page that opens.</span></p>
+            <p class="flow__row"><span class="caption">When</span> <span>Only when you tap the recall lookup link. It opens in your browser.</span></p>
+          </li>
+          <li class="flow">
+            <p class="flow__name">Listing links you save</p>
+            <p class="flow__row"><span class="caption">What</span> <span>Nothing. DealPilot never fetches them.</span></p>
+            <p class="flow__row"><span class="caption">When</span> <span>A saved link opens in your browser only when you tap it.</span></p>
+          </li>
+          <li class="flow">
+            <p class="flow__name">Apple's App Store and RevenueCat (iPhone app only)</p>
+            <p class="flow__row"><span class="caption">Where</span> <span class="mono">api.revenuecat.com</span></p>
+            <p class="flow__row">
+              <span class="caption">What</span>
+              <span
+                >A random, anonymous app ID; your App Store purchase and subscription records; and device details such as the app version, iOS version and your
+                App Store country and currency. Never your deals, VINs, photos or files.</span
+              >
+            </p>
+            <p class="flow__row">
+              <span class="caption">When</span>
+              <span>When the app checks or restores your subscription, and when you subscribe.</span>
+            </p>
+            <p class="flow__row">
+              <span class="caption">Why</span>
+              <span
+                >To confirm your subscription and unlock DealPilot Pro. We can see subscription statistics in RevenueCat's dashboard, such as trials started and
+                renewals, but nothing that identifies you. Apple handles payment; we never see your payment details or your Apple Account.</span
+              >
+            </p>
+          </li>
+          <li class="flow">
+            <p class="flow__name">Things you share yourself</p>
+            <p class="flow__row">
+              <span class="caption">What</span>
+              <span>A report, a deal file, a backup, a CSV or seller questions. Reports hide personal details by default.</span>
+            </p>
+            <p class="flow__row"><span class="caption">When</span> <span>Only when you share or save one, to the place you choose.</span></p>
+          </li>
+          <li class="flow">
+            <p class="flow__name">Email you send us</p>
+            <p class="flow__row">
+              <span class="caption">What</span>
+              <span
+                >Whatever you write. "Report a problem" drafts a summary for you to copy or send from your own email app. It leaves out the VIN, prices, links
+                and files.</span
+              >
+            </p>
+            <p class="flow__row"><span class="caption">Why</span> <span>Only to reply to you and fix the problem.</span></p>
+          </li>
+        </ul>
+      </section>
+
+      <section class="card" aria-labelledby="device">
+        <h2 id="device">Camera, photos and notifications</h2>
+        <ul>
+          <li><strong>Camera:</strong> used only when you tap Scan, to read the VIN barcode. The image is read on your iPhone. Nothing is recorded or sent.</li>
+          <li>
+            <strong>Photos and screenshots:</strong> you pick them with the system photo picker, so DealPilot sees only what you choose and never asks for
+            access to your library. When DealPilot reads text from a screenshot in the iPhone app, it does so on your iPhone. The image is not uploaded.
+          </li>
+          <li>
+            <strong>Notifications:</strong> deadline reminders are scheduled on your iPhone. Permission is asked only when you turn one on. A reminder shows the
+            deal's name and the deadline.
+          </li>
+        </ul>
+      </section>
+
+      <section class="card" aria-labelledby="dont">
+        <h2 id="dont">What we don't do</h2>
+        <ul>
+          <li>No accounts or sign-in.</li>
+          <li>No advertising and no advertising identifiers. DealPilot never asks to track you.</li>
+          <li>No analytics or crash-reporting services.</li>
+          <li>No cookies.</li>
+          <li>We don't sell or share personal information, and we don't use data brokers.</li>
+          <li>No one at DealPilot can see your deals.</li>
+        </ul>
+      </section>
+
+      <section class="card" aria-labelledby="web">
+        <h2 id="web">The web version</h2>
+        <p>
+          The web version runs in your browser and saves your deals in that browser's storage. It works offline after the first visit. VIN decodes go from your
+          browser straight to NHTSA, as in the app. There are no purchases on the web.
+        </p>
+        <p>
+          The pages are hosted on GitHub Pages. Like every web host, GitHub receives standard request data when the pages load, such as your IP address, your
+          browser version and the page requested. Your deals are not part of it. GitHub's privacy statement covers that data.
+        </p>
+      </section>
+
+      <section class="card" aria-labelledby="choices">
+        <h2 id="choices">Your choices</h2>
+        <ul>
+          <li>
+            <strong>Delete everything:</strong> the "Your data" page in DealPilot (in the iPhone app, Settings › Your data) shows what is stored and has "Delete
+            everything on this device". In the iPhone app, this also removes the second copy, shared files and scheduled reminders. Deleting the app removes its
+            data too, unless you restore a device backup.
+          </li>
+          <li><strong>Back up:</strong> you can download a backup of your deals at any time. We keep no copy.</li>
+          <li><strong>Subscription:</strong> manage or cancel it in iOS Settings, under your name and then Subscriptions. Apple handles refunds.</li>
+          <li>
+            <strong>Questions or requests:</strong> email <a href="mailto:contact@universalaillc.com">contact@universalaillc.com</a>. We hold no personal data
+            about you, but we'll help with any question about the anonymous subscription records RevenueCat keeps for this app.
+          </li>
+        </ul>
+      </section>
+
+      <section class="card" aria-labelledby="kids">
+        <h2 id="kids">Children</h2>
+        <p>
+          DealPilot is made for adults buying or reselling vehicles. It isn't directed to children under 13, and it collects no personal information from
+          anyone.
+        </p>
+      </section>
+
+      <section class="card" aria-labelledby="security">
+        <h2 id="security">Security</h2>
+        <p>
+          Your deals are protected by your device's own security, such as your passcode and iOS data protection. Every network request DealPilot makes uses
+          HTTPS.
+        </p>
+      </section>
+
+      <section class="card" aria-labelledby="changes">
+        <h2 id="changes">Changes to this policy</h2>
+        <p>
+          If what DealPilot does with data changes, we'll update this page and its effective date before the change ships. The in-app "Your data" page always
+          lists what the version you have can send.
+        </p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <p>© 2026 Universal AI LLC</p>
+        <a href="support.html">Support</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Terms of Use</a>
+        <a href="./">Open DealPilot on the web</a>
+      </div>
+    </footer>
+  </body>
+</html>
