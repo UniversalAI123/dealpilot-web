@@ -1,0 +1,17 @@
+{
+  "name": "DealPilot — check the deal before you buy",
+  "short_name": "DealPilot",
+  "description": "Work out the all-in cost and the most you can pay for a used car, with every assumption shown. Saved on your device.",
+  "start_url": "./#/",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f1efea",
+  "theme_color": "#0d0e10",
+  "lang": "en",
+  "dir": "ltr",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

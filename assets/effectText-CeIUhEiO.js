@@ -1,0 +1,1 @@
+const t=/^(repairs-|transport-|inspection-|issue-|damage-|cost-unknown-|quote-gaps-|auction-not-running)/,o="Cost unknown — request a quote",s="Cost unknown until checked";function e(n){return t.test(n)?o:s}export{o as U,e as u};

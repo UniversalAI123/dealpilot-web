@@ -431,12 +431,86 @@
       <section class="card" aria-labelledby="stays">
         <h2 id="stays">What stays on your device</h2>
         <p>Everything you enter is stored only on your device. We have no server copy of it and can't see it.</p>
+        <p>
+          On iPhone, content you explicitly share to DealPilot waits in a private inbox for up to 7 days, until you import or discard it. Pending shared text
+          and links are excluded from backups. Expired items are removed when the inbox is opened. Screenshot text recognition and receipt reading run on the
+          device; their readers do not retain the image. Confirmed expense entries and any receipt attachments you choose to retain are stored with the deal.
+          Offer records, negotiation notes, resale checklists and edited listing drafts also remain with the deal on your device. Exporting a listing draft is a
+          separate action you choose; the app does not post it to a listing site. Deposit terms, payee names and viewing or inspection plans also stay with your
+          local deal. Appointment locations are entered by you; this feature does not access GPS. Generated reports omit the separate deposit-payee,
+          appointment-location and appointment-note fields, while deal backups retain them. An appointment CSV you choose to export includes its saved locations
+          and notes.
+        </p>
+        <p>
+          Local change history can retain earlier values after you edit a field. It is included in ordinary backups but omitted from analysis reports and buyer
+          summaries. You can review, export or clear it under Decision › Report actions › Deal change history. Clearing history does not change current deal
+          facts or delete copies you already exported. File contents and attachment fields are withheld from app-recorded history; your own notes or imported
+          records can still mention files. A failed history-clear save is not confirmed deletion until storage retry succeeds.
+        </p>
+        <p>
+          Export cost worksheets stay with your local deal, including entered currencies and exchange rates, quote sources and dates, route costs, and saved
+          earlier scenarios. They are included in private deal backups and local recovery. Standard analysis reports and buyer summaries omit the worksheet. A
+          worksheet CSV you explicitly export includes its private quote details and assumptions. Editing current deal costs does not rewrite an earlier
+          scenario; deleting a deal or using Delete everything removes its stored worksheets. Copies you already exported remain wherever you saved them.
+        </p>
+        <p>
+          Read details can retain a private reference identifying the listing-text, screenshot or VIN-barcode intake that produced them, its completion time and
+          an optional file ID. This reference keeps no raw text, image bytes, filename or listing URL. You can inspect source details in the deal. A file's
+          current metadata can identify its name; removed or expired source files are marked missing. Corrections keep the first known original reference; older
+          missing metadata stays unknown. Read references do not authenticate a source. Private backups and snapshots preserve these references; ordinary shared
+          reports omit their IDs. Default personal redaction also withholds source-reference fields and free-text links, which can contain private access
+          tokens. Explicitly turning redaction off can expose those references; check the preview before sharing.
+        </p>
+        <p>
+          Optional model recall research retains the selected U.S. model year/make/model, exact NHTSA source address, retrieval date and public campaign records
+          locally. Private backups, snapshots and native recovery retain it; ordinary shared reports omit it. Removing the current reference does not rewrite
+          older snapshots. Model campaigns do not establish whether an individual VIN is affected or has an unrepaired recall. Imported local records are not
+          independently authenticated.
+        </p>
+        <p>
+          Private export invoice comparisons retain frozen estimates, invoice and credit references, amounts, cost allocations, currency conversion sources,
+          completeness reviews and final gross sale records on your device. They stay separate from cash-payment records. Ordinary shared reports omit this
+          worksheet; an explicit private invoice CSV includes its financial sources, corrections and historical file IDs. Missing or expired supporting files do
+          not erase earlier owner-entered financial transcriptions. The app does not independently verify invoices or payments.
+        </p>
+        <p>
+          Private export document and shipment records retain the captured route and vehicle facts, owner-entered requirements and source references, document
+          progress, linked attachment IDs, dates, time zones and event corrections. They stay in private deal backups, snapshots and local recovery; standard
+          analysis reports and buyer packs omit them. An explicit shipment CSV includes these private details. Removing or expiring an Evidence file does not
+          erase the recorded claim, but its link shows missing; the log keeps no copy of that file's contents or name. Previous routes and app-recorded changes
+          can retain earlier entries. No document authenticity, acceptance, shipment or customs clearance is independently verified. Date-only entries do not
+          invent an exact time, and this tracker does not schedule notifications. Delete its deal or use Delete everything to remove the stored records. Earlier
+          exports and device backups can retain copies.
+        </p>
+        <p>
+          Your private service contact book keeps the details you enter, including names, businesses, roles, phone numbers, email addresses, service areas,
+          notes and your permission/source records. It does not access the phone's address book or verify consent, qualifications or contact accuracy. Saving
+          sends no message. Contacts have a separate private backup and restore flow; deal backups, reports, buyer packs and snapshots omit the book. On iPhone
+          the local recovery copy also keeps contacts, including when there are no vehicle deals. Removing a contact updates the book and its next confirmed
+          recovery copy. Delete everything removes the book and clears open contact drafts. Exported files and older device backups can retain copies.
+        </p>
+        <p>
+          The last ten screen or JavaScript error categories and their timestamps are kept only in the open app's memory. Error messages, exception details,
+          rejection contents and stacks are not copied into diagnostic downloads. Nothing is sent automatically. Report a problem lets you download build and
+          device facts with these categories, or clear the categories; Delete everything also clears them. Later errors can create new entries. These categories
+          do not measure native crashes or reliably count separate incidents.
+        </p>
+        <p>
+          On iPhone, review-request timing and your on/off preference are stored locally and in the local recovery mirror: first-use time, recent days with a
+          saved task and reserved request times/app versions. Your device's own backup settings may include the recovery mirror. These records contain no deal
+          identifiers, prices, ratings or subscription status. Settings lets you turn requests off, and Delete everything removes this timing data. Apple
+          controls its system review prompt; DealPilot cannot tell whether it appeared or whether you submitted a review.
+        </p>
         <ul>
           <li>Your deals: vehicle facts, prices, cost lines, checks, notes, comparables and the results DealPilot works out.</li>
-          <li>Snapshots of a deal, up to 20 per deal.</li>
           <li>
-            Screenshots and documents you choose to keep with a deal, for the period you pick (7, 30 or 90 days; 30 unless you change it). They are deleted on
-            that date.
+            Up to 20 ordinary snapshots per deal, plus prepared/shared report snapshots and pinned snapshots retained until you delete them or the deal. Device
+            storage limits still apply.
+          </li>
+          <li>
+            Files you choose to keep follow the period shown in their picker. Listing screenshots offer 7, 30 or 90 days (30 by default). Files uploaded under
+            Evidence offer 30, 90 or 365 days, or until you remove them. Expired files are removed when DealPilot runs cleanup, including at startup or when its
+            files view is opened; removal can wait until you next use the app.
           </li>
           <li>Your settings, such as the theme and your usual numbers.</li>
           <li>In the iPhone app, deadline reminders you turn on, and a second copy of your deals in the app's private storage so iOS doesn't clear them.</li>
@@ -456,6 +530,34 @@
             <p class="flow__row"><span class="caption">Where</span> <span class="mono">vpic.nhtsa.dot.gov</span></p>
             <p class="flow__row"><span class="caption">What</span> <span>The VIN, and nothing else.</span></p>
             <p class="flow__row"><span class="caption">When</span> <span>Only when you tap Decode. NHTSA's own privacy policy applies to its service.</span></p>
+          </li>
+          <li class="flow">
+            <p class="flow__name">Official consumer, inspection and EV guidance links</p>
+            <p class="flow__row">
+              <span class="caption">What</span>
+              <span
+                >A normal visit to the official provider’s page when you tap its link. Guidance links include no saved deal, VIN or inspection notes; reading
+                the in-app guidance sends nothing.</span
+              >
+            </p>
+          </li>
+          <li class="flow">
+            <p class="flow__name">NHTSA public U.S. model recall API</p>
+            <p class="flow__row"><span class="caption">Where</span> <span>api.nhtsa.gov</span></p>
+            <p class="flow__row">
+              <span class="caption">What</span>
+              <span
+                >The model year and selected official make/model, plus normal network request data. No VIN, listing text, saved deal, photo or account token.
+                Credentials and referrer information are omitted.</span
+              >
+            </p>
+            <p class="flow__row">
+              <span class="caption">When</span>
+              <span
+                >Only when you load official makes/models or request model campaigns. Opening a retained reference does not refresh it. NHTSA’s own privacy
+                policy applies.</span
+              >
+            </p>
           </li>
           <li class="flow">
             <p class="flow__name">NHTSA recall lookup</p>
@@ -494,9 +596,26 @@
             <p class="flow__name">Things you share yourself</p>
             <p class="flow__row">
               <span class="caption">What</span>
-              <span>A report, a deal file, a backup, a CSV or seller questions. Reports hide personal details by default.</span>
+              <span
+                >A report, a deal file, a backup, a CSV, seller questions or selected buyer records. Analysis reports hide personal details by default.
+                Buyer-record archives include the original files you select, unchanged; review them for personal information, prices, VINs and photo location
+                metadata before sharing.</span
+              >
             </p>
             <p class="flow__row"><span class="caption">When</span> <span>Only when you share or save one, to the place you choose.</span></p>
+          </li>
+          <li class="flow">
+            <p class="flow__name">Apple billing-help pages</p>
+            <p class="flow__row">
+              <span class="caption">What</span>
+              <span
+                >A normal page visit to support.apple.com, only when you tap an Apple billing-help link. DealPilot does not attach saved vehicle records or card
+                details.</span
+              >
+            </p>
+            <p class="flow__row">
+              <span class="caption">When</span> <span>Your browser opens Apple's page. Apple's own privacy practices apply to that visit.</span>
+            </p>
           </li>
           <li class="flow">
             <p class="flow__name">Email you send us</p>
@@ -504,7 +623,8 @@
               <span class="caption">What</span>
               <span
                 >Whatever you write. "Report a problem" drafts a summary for you to copy or send from your own email app. It leaves out the VIN, prices, links
-                and files.</span
+                and files. A billing-help draft includes the issue category, app/build version and purchase-check state. Opening or copying a draft sends
+                nothing; you choose what to add and send. If you send it, your sender address and message reach our support mailbox.</span
               >
             </p>
             <p class="flow__row"><span class="caption">Why</span> <span>Only to reply to you and fix the problem.</span></p>
@@ -522,7 +642,7 @@
           </li>
           <li>
             <strong>Notifications:</strong> deadline reminders are scheduled on your iPhone. Permission is asked only when you turn one on. A reminder shows the
-            deal's name and the deadline.
+            deal's name and the recorded deadline or follow-up date. It does not contact a seller or book an appointment.
           </li>
         </ul>
       </section>
@@ -556,24 +676,22 @@
         <ul>
           <li>
             <strong>Delete everything:</strong> the "Your data" page in DealPilot (in the iPhone app, Settings › Your data) shows what is stored and has "Delete
-            everything on this device". In the iPhone app, this also removes the second copy, shared files and scheduled reminders. Deleting the app removes its
-            data too, unless you restore a device backup.
+            everything on this device". In the iPhone app, this also removes the second copy, shared files, pending shared listings and scheduled reminders.
+            Deleting the app removes its data too, unless you restore a device backup.
           </li>
           <li><strong>Back up:</strong> you can download a backup of your deals at any time. We keep no copy.</li>
           <li><strong>Subscription:</strong> manage or cancel it in iOS Settings, under your name and then Subscriptions. Apple handles refunds.</li>
           <li>
-            <strong>Questions or requests:</strong> email <a href="mailto:contact@universalaillc.com">contact@universalaillc.com</a>. We hold no personal data
-            about you, but we'll help with any question about the anonymous subscription records RevenueCat keeps for this app.
+            <strong>Questions or requests:</strong> email <a href="mailto:contact@universalaillc.com">contact@universalaillc.com</a>. Your vehicle records stay
+            on your device. If you contact us, support can read your sender address and the message you choose to send. We can also help with questions about
+            the anonymous subscription records RevenueCat keeps for this app.
           </li>
         </ul>
       </section>
 
       <section class="card" aria-labelledby="kids">
         <h2 id="kids">Children</h2>
-        <p>
-          DealPilot is made for adults buying or reselling vehicles. It isn't directed to children under 13, and it collects no personal information from
-          anyone.
-        </p>
+        <p>DealPilot is made for adults buying or reselling vehicles. It isn't directed to children under 13.</p>
       </section>
 
       <section class="card" aria-labelledby="security">

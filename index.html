@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-ICVlsRvRvjJ00nVG8rDE2YVuM6aXS3zNiW7JyARQvPQ='; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' data:; connect-src 'self' https://vpic.nhtsa.dot.gov; frame-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'none'" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-vjqMGjkh+gy6tMAhM9uidYsD01b9czj7LMBK6AyFUTI='; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' data:; connect-src 'self' https://vpic.nhtsa.dot.gov https://api.nhtsa.gov; frame-src 'self' blob:; worker-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'" />
     <meta name="robots" content="noindex, nofollow" />
     <meta name="referrer" content="no-referrer" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
@@ -18,6 +18,11 @@
       type="image/svg+xml"
       href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Crect%20width='32'%20height='32'%20rx='8'%20fill='%230D0E10'/%3E%3Cpath%20d='M8%2023.08A9.23%209.23%200%201%201%2024%2023.08'%20fill='none'%20stroke='%23F1EFEA'%20stroke-opacity='.45'%20stroke-width='2'%20stroke-linecap='round'/%3E%3Cpath%20d='M8%2023.08A9.23%209.23%200%200%201%2021.93%2011.39'%20fill='none'%20stroke='%235CE1F2'%20stroke-width='2.4'%20stroke-linecap='round'/%3E%3Cpath%20d='M16%2018.46L20.43%2013.18'%20stroke='%23F1EFEA'%20stroke-width='2.4'%20stroke-linecap='round'/%3E%3Ccircle%20cx='16'%20cy='18.46'%20r='2.1'%20fill='%23F1EFEA'/%3E%3C/svg%3E"
     />
+    <link rel="icon" type="image/png" sizes="32x32" href="/dealpilot-web/icons/favicon-32.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/dealpilot-web/icons/apple-touch-icon.png" />
+    <link rel="manifest" href="/dealpilot-web/manifest.webmanifest" />
+    <meta name="application-name" content="DealPilot" />
+    <meta name="apple-mobile-web-app-title" content="DealPilot" />
     <title>DealPilot — Check the deal before you buy</title>
     <script>
       // Apply the stored theme before first paint (no flash). Mirrors src/ui/app/theme.ts.
@@ -26,33 +31,84 @@
           var t = localStorage.getItem('dealpilot:theme');
           if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
         } catch (e) {}
+        // The stylesheet uses cascade layers (2022+ browsers). Where they are missing it
+        // would be ignored, so say so instead of showing an unstyled app.
+        if (!('CSSLayerBlockRule' in window)) {
+          document.documentElement.setAttribute('data-legacy-browser', '');
+          document.addEventListener('DOMContentLoaded', function () {
+            var note = document.getElementById('legacy-browser');
+            if (note) note.hidden = false;
+          });
+        }
       })();
     </script>
     <style>
-      /* Pre-CSS paint: avoid a white flash in dark mode before the stylesheet loads. */
-      html {
-        background: #f1efea;
-        color-scheme: light;
-      }
-      @media (prefers-color-scheme: dark) {
-        html:not([data-theme='light']) {
+      /* Pre-CSS paint: avoid a white flash in dark mode before the stylesheet loads.
+         The lowest cascade layer (src/ui/styles/cssLayers.ts), so the real stylesheet always wins. */
+      @layer prepaint {
+        html {
+          background: #f1efea;
+          color-scheme: light;
+        }
+        @media (prefers-color-scheme: dark) {
+          html:not([data-theme='light']) {
+            background: #05070a;
+            color-scheme: dark;
+          }
+        }
+        html[data-theme='dark'] {
           background: #05070a;
           color-scheme: dark;
         }
       }
-      html[data-theme='dark'] {
-        background: #05070a;
-        color-scheme: dark;
+      /* Outside the layers on purpose: browsers without cascade layers still read it. */
+      html[data-legacy-browser] #root {
+        display: none;
       }
     </style>
-    <script type="module" crossorigin src="/dealpilot-web/assets/index-CU6QN_Ej.js"></script>
+    <script type="module" crossorigin src="/dealpilot-web/assets/index-DKSuGLMo.js"></script>
     <link rel="modulepreload" crossorigin href="/dealpilot-web/assets/react-Coahmxxj.js">
+    <link rel="modulepreload" crossorigin href="/dealpilot-web/assets/zod-DbIf9H7f.js">
     <link rel="modulepreload" crossorigin href="/dealpilot-web/assets/decimal-CaUHonIL.js">
-    <link rel="modulepreload" crossorigin href="/dealpilot-web/assets/zod-Bq6lgZxS.js">
-    <link rel="stylesheet" crossorigin href="/dealpilot-web/assets/index-D1R3jJ5N.css">
+    <link rel="modulepreload" crossorigin href="/dealpilot-web/assets/records-DfSGAhl4.js">
+    <link rel="stylesheet" crossorigin href="/dealpilot-web/assets/index-BO9RLmOR.css">
+      <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="DealPilot" />
+    <meta property="og:title" content="DealPilot — Check the deal before you buy" />
+    <meta property="og:description" content="Work out the all-in cost and the most you can pay for a used car, with every assumption shown. Free prototype · saved on your device · no account." />
+    <meta property="og:url" content="https://universalai123.github.io/dealpilot-web/" />
+    <meta property="og:image" content="https://universalai123.github.io/dealpilot-web/og-image.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="DealPilot gauge mark with the promise “Check the deal before you buy” and the three rules it counts by." />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image:alt" content="DealPilot gauge mark with the promise “Check the deal before you buy” and the three rules it counts by." />
   </head>
   <body>
     <noscript>DealPilot needs JavaScript to run. Your deals are saved in this browser only.</noscript>
-    <div id="root"></div>
+    <p id="legacy-browser" hidden>
+      DealPilot needs a newer browser: Safari 15.4, Chrome 99, Firefox 97 or later. Your deals stay saved in this browser; update it and open DealPilot again.
+    </p>
+    <div id="root">
+      <!-- Boot shell (DP-55): the app header's gauge face and wordmark, painted from
+           HTML + the stylesheet while the JavaScript downloads. React replaces it on
+           its first render with the real header, whose needle and arc then draw in.
+           Kept in step with AppShell/LogoMark by src/ui/styles/bootShell.test.ts. -->
+      <div class="shell" aria-hidden="true">
+        <header class="shell-header">
+          <div class="shell-header__inner">
+            <span class="brand">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26 26" width="26" height="26" class="logo-mark" focusable="false">
+                <rect x="0" y="0" width="26" height="26" rx="7" class="logo-mark__tile" />
+                <path d="M7.14 20.65A8.29 8.29 0 1 1 18.86 20.65" class="logo-mark__scale" />
+                <circle cx="13" cy="14.79" r="2.2" class="logo-mark__hub" />
+              </svg>
+              <span class="brand__name">DealPilot</span>
+            </span>
+          </div>
+        </header>
+      </div>
+    </div>
   </body>
 </html>
