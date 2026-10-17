@@ -2,12 +2,12 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-vjqMGjkh+gy6tMAhM9uidYsD01b9czj7LMBK6AyFUTI='; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' data:; connect-src 'self' https://vpic.nhtsa.dot.gov https://api.nhtsa.gov; frame-src 'self' blob:; worker-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-kk06TYIBTNhWki2IjV5YZO31HpYNnUn8NC1IGqOJ+f0='; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' data:; connect-src 'self' https://vpic.nhtsa.dot.gov https://api.nhtsa.gov https://www.fueleconomy.gov; frame-src 'self' blob:; worker-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'" />
     <meta name="robots" content="noindex, nofollow" />
     <meta name="referrer" content="no-referrer" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <meta name="color-scheme" content="light dark" />
-    <meta name="theme-color" content="#f1efea" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#f4f5f7" media="(prefers-color-scheme: light)" />
     <meta name="theme-color" content="#05070a" media="(prefers-color-scheme: dark)" />
     <meta
       name="description"
@@ -29,6 +29,9 @@
       (function () {
         try {
           var t = localStorage.getItem('dealpilot:theme');
+          // Mirrors DEFAULT_THEME in src/ui/app/theme.ts: the iOS app opens dark until a choice is stored.
+          var cap = window.Capacitor;
+          if (t !== 'light' && t !== 'dark' && t !== 'system' && cap && typeof cap.isNativePlatform === 'function' && cap.isNativePlatform()) t = 'dark';
           if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
         } catch (e) {}
         // The stylesheet uses cascade layers (2022+ browsers). Where they are missing it
@@ -47,7 +50,7 @@
          The lowest cascade layer (src/ui/styles/cssLayers.ts), so the real stylesheet always wins. */
       @layer prepaint {
         html {
-          background: #f1efea;
+          background: #f4f5f7;
           color-scheme: light;
         }
         @media (prefers-color-scheme: dark) {
@@ -66,12 +69,12 @@
         display: none;
       }
     </style>
-    <script type="module" crossorigin src="/dealpilot-web/assets/index-DKSuGLMo.js"></script>
+    <script type="module" crossorigin src="/dealpilot-web/assets/index-DbnUE2g7.js"></script>
     <link rel="modulepreload" crossorigin href="/dealpilot-web/assets/react-Coahmxxj.js">
-    <link rel="modulepreload" crossorigin href="/dealpilot-web/assets/zod-DbIf9H7f.js">
+    <link rel="modulepreload" crossorigin href="/dealpilot-web/assets/zod-Dm_viHeB.js">
     <link rel="modulepreload" crossorigin href="/dealpilot-web/assets/decimal-CaUHonIL.js">
-    <link rel="modulepreload" crossorigin href="/dealpilot-web/assets/records-DfSGAhl4.js">
-    <link rel="stylesheet" crossorigin href="/dealpilot-web/assets/index-BO9RLmOR.css">
+    <link rel="modulepreload" crossorigin href="/dealpilot-web/assets/records-COv8JuGD.js">
+    <link rel="stylesheet" crossorigin href="/dealpilot-web/assets/index-C5RZrxxw.css">
       <meta property="og:type" content="website" />
     <meta property="og:site_name" content="DealPilot" />
     <meta property="og:title" content="DealPilot — Check the deal before you buy" />
