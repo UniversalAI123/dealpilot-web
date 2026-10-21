@@ -17,7 +17,7 @@
     <meta name="robots" content="noindex, nofollow" />
     <meta
       name="description"
-      content="DealPilot's privacy policy: no accounts, no ads, no tracking. Deals stay on your device. Everything that can leave it, and when."
+      content="DealPilot's privacy policy: optional pilot accounts, no ads, no tracking. Deals stay on your device. Everything that can leave it, and when."
     />
     <link
       rel="icon"
@@ -398,25 +398,27 @@
     </header>
 
     <main id="main" class="wrap">
-      <p class="eyebrow">Privacy policy · Effective October 14, 2026</p>
+      <p class="eyebrow">Privacy policy · Effective October 21, 2026</p>
       <h1>Your deals stay on your device</h1>
       <p class="lede">
-        DealPilot has no accounts, no ads and no tracking. This policy covers the DealPilot iPhone app and the DealPilot web version. It lists everything that
-        can leave your device, and when.
+        DealPilot has no ads or tracking. Optional pilot accounts and licensed market lookups operate only when a dedicated server is configured. This policy
+        covers the DealPilot iPhone app and the DealPilot web version. It lists everything that can leave your device, and when.
       </p>
 
       <section class="card card--accent" aria-labelledby="short">
         <h2 id="short">In short</h2>
         <ul class="facts">
-          <li>No account</li>
+          <li>Optional pilot sign-in; deals remain on this device</li>
           <li>No ads</li>
-          <li>No analytics</li>
+          <li>No advertising analytics</li>
           <li>No tracking</li>
           <li>Deals stored on your device</li>
-          <li>Nothing sold or shared</li>
+          <li>No sale of personal information; service processing is described below</li>
         </ul>
         <p class="muted small">
-          The only data collected is anonymous purchase history for the subscription, handled by Apple and RevenueCat. It isn't linked to who you are.
+          Purchases start with an anonymous RevenueCat app ID. If an approved subscription connection is enabled and you choose it, a random purchase identifier
+          links the subscription to your pilot account. Optional sign-in collects an email and account identifier; deliberate market searches send the fields
+          described below.
         </p>
       </section>
 
@@ -460,6 +462,18 @@
           missing metadata stays unknown. Read references do not authenticate a source. Private backups and snapshots preserve these references; ordinary shared
           reports omit their IDs. Default personal redaction also withholds source-reference fields and free-text links, which can contain private access
           tokens. Explicitly turning redaction off can expose those references; check the preview before sharing.
+        </p>
+        <p>
+          Buying criteria are private device preferences for make/model, model-year range, mileage and price/margin limits. They do not fetch listings. Existing
+          local native recovery includes these settings, but ordinary deal backups, iCloud Drive deal backup files and reports do not. Delete everything removes
+          them. A report's Read first card uses only that report's own recorded, redacted contents.
+        </p>
+        <p>
+          Seller progress and private next-action notes stay with your purchase plan, private backups, snapshots and existing iCloud Drive deal backups when
+          available. Suggested charge locations from on-device text reading keep only the charge label, amount, local file reference and image coordinates with
+          the private deal; no extra copy of the image or raw text is stored by this feature. Changing the charge or linked file invalidates the location.
+          Ordinary shared reports omit these locations and the next action. Contract review generates questions locally from your recorded charges; Copy puts
+          only those shown questions on your clipboard when you choose it. Nothing contacts a seller or sends a contract automatically.
         </p>
         <p>
           Optional model recall research retains the selected U.S. model year/make/model, exact NHTSA source address, retrieval date and public campaign records
@@ -514,6 +528,12 @@
           </li>
           <li>Your settings, such as the theme and your usual numbers.</li>
           <li>In the iPhone app, deadline reminders you turn on, and a second copy of your deals in the app's private storage so iOS doesn't clear them.</li>
+          <li>
+            If you enable Local usage summary in Settings, up to 90 days of yes/no activity flags stay on this device: app use, complete checks, opening saved
+            deals, viewing the paywall, observed trial/Pro access, and active purchase responses. No car details, identifiers, prices or exact times are kept.
+            Nothing is sent automatically. You may export a summary yourself; turning it off deletes it. It is separate from pilot logs and ordinary deal
+            backups, but the device’s own backup may include it. Delete everything removes it.
+          </li>
           <li>If you turn on pilot mode, a usage log of the newest 10,000 events. It stays on the device and is never sent.</li>
         </ul>
         <p class="muted small">
@@ -640,19 +660,21 @@
             <p class="flow__row">
               <span class="caption">What</span>
               <span
-                >A random, anonymous app ID; your App Store purchase and subscription records; and device details such as the app version, iOS version and your
-                App Store country and currency. Never your deals, VINs, photos or files.</span
+                >A random app ID, initially anonymous; your App Store purchase and subscription records; and device details such as the app version, iOS version
+                and your App Store country and currency. An explicitly approved account connection uses a server-generated random purchase ID linked to your
+                DealPilot account. It does not send your email, deals, VINs, photos or files to RevenueCat.</span
               >
             </p>
             <p class="flow__row">
               <span class="caption">When</span>
-              <span>When the app checks or restores your subscription, and when you subscribe.</span>
+              <span>When the app checks or restores your subscription, when you subscribe, and after you approve an enabled account connection.</span>
             </p>
             <p class="flow__row">
               <span class="caption">Why</span>
               <span
-                >To confirm your subscription and unlock DealPilot Pro. We can see subscription statistics in RevenueCat's dashboard, such as trials started and
-                renewals, but nothing that identifies you. Apple handles payment; we never see your payment details or your Apple Account.</span
+                >To confirm your subscription and unlock DealPilot Pro. We can see subscription statistics in RevenueCat's dashboard. An approved connection
+                lets our account service verify subscription access before an eligible paid lookup. Apple handles payment; we do not receive your card details
+                or Apple Account credentials.</span
               >
             </p>
           </li>
@@ -698,6 +720,18 @@
 
       <section class="card" aria-labelledby="device">
         <h2 id="device">Camera, photos and notifications</h2>
+        <p>
+          In a build with optional scanner support, entering your own private Wi-Fi OBD adapter address and confirming the parked vehicle starts fixed read-only
+          requests over your local Wi-Fi. No code-clearing or ECU-write command is offered. Readings stay on the device unless you save them and separately
+          approve syncing that deal. Physical adapter compatibility must be checked; this does not provide Bluetooth scanner or manufacturer-specific ECU
+          coverage.
+        </p>
+        <p>
+          Optional saved-search push notifications require separate iPhone permission and an enabled Apple push service. Registration sends an Apple device
+          token and environment to our account service. Notification text contains no VIN, prices, profit figures or location. Apple and network conditions
+          affect delivery; attempted sends are not proof of receipt. Signing out stops notification registration on that device. The licensed discovery feed and
+          Apple push service are currently not activated.
+        </p>
         <ul>
           <li><strong>Camera:</strong> used only when you tap Scan, to read the VIN barcode. The image is read on your iPhone. Nothing is recorded or sent.</li>
           <li>
@@ -714,7 +748,7 @@
       <section class="card" aria-labelledby="dont">
         <h2 id="dont">What we don't do</h2>
         <ul>
-          <li>No accounts or sign-in.</li>
+          <li>Pilot sign-in is optional and does not start sync. Selected-deal sync needs separate approval.</li>
           <li>No advertising and no advertising identifiers. DealPilot never asks to track you.</li>
           <li>No analytics or crash-reporting services.</li>
           <li>No cookies.</li>
@@ -748,7 +782,7 @@
           <li>
             <strong>Questions or requests:</strong> email <a href="mailto:contact@universalaillc.com">contact@universalaillc.com</a>. Your vehicle records stay
             on your device. If you contact us, support can read your sender address and the message you choose to send. We can also help with questions about
-            the anonymous subscription records RevenueCat keeps for this app.
+            the subscription records RevenueCat keeps for this app, including an account connection you approved where that feature is enabled.
           </li>
         </ul>
       </section>
@@ -771,6 +805,65 @@
         <p>
           If what DealPilot does with data changes, we'll update this page and its effective date before the change ships. The in-app "Your data" page always
           lists what the version you have can send.
+        </p>
+      </section>
+      <section class="policy-section">
+        <h2>Optional pilot accounts, sync and market comparisons</h2>
+        <p>
+          Only in a separately configured pilot, requesting a sign-in code sends your email to the DealPilot account server and Supabase Auth. Entering that
+          code starts a session kept in app memory; reopening requires another sign-in. Authentication email is delivered through Resend. Public account
+          creation remains disabled in the current private pilot.
+        </p>
+        <p>
+          The account server limits code requests, verification attempts and session refreshes across its running instances. Its short-lived security counters
+          use keyed digests of the email or refresh token, an action, a count and a window end; they do not store the raw email, token, code or IP address.
+          Subject counters expire after one minute and are removed during requests or by a cleanup scheduled every five minutes while the database runs. Cleanup
+          may wait if the project is paused. The global counter has no person identifier. This cleanup job keeps seven days of its operational history. Supabase
+          service logs and backups have separate retention. Authentication email delivery is enabled for the private pilot.
+        </p>
+        <p>
+          A market lookup sends the authenticated account ID and the requested model year, make/model/trim, ZIP and radius to our server. MarketCheck receives
+          the vehicle search and location, not your complete deal, photos, attachments or Supabase token. Our server retains quota and request identifiers to
+          prevent duplicate provider calls. Returned listings remain asking-price evidence. Saving selected comparisons requires review and permission under the
+          provider contract. When retention is permitted, up to ten lookup results are held in app memory for up to 15 minutes so reopening does not need
+          another provider call. Signing out, restarting or deleting local data clears that temporary cache.
+        </p>
+        <p>
+          In a later enabled version, a vehicle-history summary sends the VIN to our server and VinAudit. It does not send your complete deal or attachments.
+          Only when licensed storage is allowed, private completed lookup results may be recoverable for 24 hours. Expired copies are unavailable and are
+          removed by maintenance while the database runs; project pauses can delay physical cleanup. Provider records and backups have separate retention.
+          History coverage can be incomplete and does not verify a clean title or safe condition.
+        </p>
+        <p>
+          Optional saved searches store the chosen vehicle, ZIP, radius, seller type, price/mileage limits and daily-check approval privately in your account.
+          Enabled daily checks send those criteria to MarketCheck and use your lookup allowance. Licensed search results may be retained for up to 30 days,
+          subject to database maintenance and separate backups. Deleting a search removes its stored results. Push alerts are not connected. Quote requests open
+          a reviewed draft in your own email app; that app handles sending and replies. Generated drafts omit private budgets and profit targets, and include
+          the VIN only when selected. DealPilot does not infer that opening a draft delivered it.
+        </p>
+        <p>
+          Where subscription connection is enabled, your explicit approval asks the iPhone SDK to identify and restore your existing purchase. It does not buy a
+          subscription or start a vehicle-data lookup. Our server stores your account-to-purchase ID mapping and a digest that prevents one vendor customer from
+          receiving duplicate account allowances. It reads subscription status directly from RevenueCat rather than trusting a client Pro flag; full receipts
+          and vendor response bodies are not stored by this flow. Test subscriptions and free trials do not unlock production data calls. Signing out
+          disconnects the loaded purchase identity on this device and can require restoring Pro again; it does not cancel your Apple subscription. Account
+          deletion removes the application mapping, while Apple/RevenueCat purchase retention is separate.
+        </p>
+        <p>
+          Signing in alone does not synchronize deals or files. In a build with Device sync, you may separately select deals and approve uploading their
+          records, notes, entered city/state/ZIP, financial details and supported photos/documents to private Supabase storage. These records are linked to your
+          account. The current sync limits are 8 MB per file and 50 MB per account. Timed-retention files and licensed MarketCheck comparison records pause sync
+          pending appropriate cloud retention support/permission. Checks run while the app is open and visible after you start or resume sync; conflicting edits
+          require review. Pausing or signing out stops future checks, while work already in progress may finish. Removing local data or deselecting a deal does
+          not delete its cloud copy. Account deletion also removes the account-owned private sync files when that service is enabled. Signing out or deleting
+          local data clears the loaded local account session. Deleting local data does not delete a Supabase account or server-side quota records; where the
+          account service is connected and deletion is enabled, Settings → Account → Delete account requires a fresh email code and explicit confirmation.
+          Confirmed deletion removes the Auth account and its account-owned workspaces, memberships, request receipts, licensed result copies, saved searches,
+          purchase-identity mappings and account-keyed usage records. Aggregate daily cost counters contain no account ID and may remain. Device deals and
+          attachments remain until you delete them separately. This does not cancel an Apple subscription. If deletion cannot be confirmed or email delivery is
+          unavailable, use the support contact in this policy. Supabase, Resend, Apple and RevenueCat may retain service logs, purchase records or backups under
+          their own policies; deleting an account does not promise immediate erasure of those separate copies. Support messages remain in our business mailbox
+          while needed to answer requests or keep necessary business records; contact us to request deletion.
         </p>
       </section>
     </main>
