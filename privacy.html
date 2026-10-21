@@ -17,7 +17,7 @@
     <meta name="robots" content="noindex, nofollow" />
     <meta
       name="description"
-      content="DealPilot's privacy policy: optional pilot accounts, no ads, no tracking. Deals stay on your device. Everything that can leave it, and when."
+      content="DealPilot's privacy policy: optional pilot accounts, no ads, no tracking. Deals are private by default; optional selected-deal cloud sync requires approval. What can leave your device, and when."
     />
     <link
       rel="icon"
@@ -399,7 +399,7 @@
 
     <main id="main" class="wrap">
       <p class="eyebrow">Privacy policy · Effective October 21, 2026</p>
-      <h1>Your deals stay on your device</h1>
+      <h1>Your data, your choices</h1>
       <p class="lede">
         DealPilot has no ads or tracking. Optional pilot accounts and licensed market lookups operate only when a dedicated server is configured. This policy
         covers the DealPilot iPhone app and the DealPilot web version. It lists everything that can leave your device, and when.
@@ -408,11 +408,11 @@
       <section class="card card--accent" aria-labelledby="short">
         <h2 id="short">In short</h2>
         <ul class="facts">
-          <li>Optional pilot sign-in; deals remain on this device</li>
+          <li>Optional pilot sign-in; selected-deal cloud sync requires separate approval</li>
           <li>No ads</li>
           <li>No advertising analytics</li>
           <li>No tracking</li>
-          <li>Deals stored on your device</li>
+          <li>Deals are stored on your device; approved sync also stores private cloud copies</li>
           <li>No sale of personal information; service processing is described below</li>
         </ul>
         <p class="muted small">
@@ -432,7 +432,11 @@
 
       <section class="card" aria-labelledby="stays">
         <h2 id="stays">What stays on your device</h2>
-        <p>Everything you enter is stored only on your device. We have no server copy of it and can't see it.</p>
+        <p>
+          Your entries are stored on your device by default. If you separately approve selected-deal sync, our Supabase service also stores those chosen records
+          and supported files under your account. Authorized service operators can access server records for support, security and operation; these copies are
+          not end-to-end encrypted against the operator.
+        </p>
         <p>
           On iPhone, content you explicitly share to DealPilot waits in a private inbox for up to 7 days, until you import or discard it. Pending shared text
           and links are excluded from backups. Expired items are removed when the inbox is opened. Screenshot text recognition and receipt reading run on the
@@ -543,7 +547,10 @@
 
       <section class="card" aria-labelledby="leaves">
         <h2 id="leaves">What leaves your device, and when</h2>
-        <p>Nothing leaves without you doing something first, except the subscription check described below.</p>
+        <p>
+          The subscription check can run automatically. Account requests and selected-deal sync require your actions and approval; after starting sync, approved
+          records can transfer while the app is open. The flows below describe other requests.
+        </p>
         <ul class="flows">
           <li class="flow">
             <p class="flow__name">NHTSA vPIC, the U.S. government's VIN decoder</p>
@@ -736,7 +743,8 @@
           <li><strong>Camera:</strong> used only when you tap Scan, to read the VIN barcode. The image is read on your iPhone. Nothing is recorded or sent.</li>
           <li>
             <strong>Photos and screenshots:</strong> you pick them with the system photo picker, so DealPilot sees only what you choose and never asks for
-            access to your library. When DealPilot reads text from a screenshot in the iPhone app, it does so on your iPhone. The image is not uploaded.
+            access to your library. When DealPilot reads text from a screenshot in the iPhone app, it does so on your iPhone. Text reading itself does not
+            upload the image. A supported file you deliberately include in selected-deal sync can be uploaded after separate approval.
           </li>
           <li>
             <strong>Notifications:</strong> deadline reminders are scheduled on your iPhone. Permission is asked only when you turn one on. A reminder shows the
@@ -750,10 +758,15 @@
         <ul>
           <li>Pilot sign-in is optional and does not start sync. Selected-deal sync needs separate approval.</li>
           <li>No advertising and no advertising identifiers. DealPilot never asks to track you.</li>
-          <li>No analytics or crash-reporting services.</li>
+          <li>No advertising analytics or separate crash-reporting SDK. RevenueCat processes subscription records for functionality and purchase analytics.</li>
           <li>No cookies.</li>
-          <li>We don't sell or share personal information, and we don't use data brokers.</li>
-          <li>No one at DealPilot can see your deals.</li>
+          <li>
+            We do not sell personal information, share it for targeted advertising or use data brokers. The service providers described here process data to run
+            enabled features.
+          </li>
+          <li>
+            Local-only deals are not visible to us. Selected records approved for cloud sync are accessible to authorized service operators as described above.
+          </li>
         </ul>
       </section>
 
@@ -777,12 +790,13 @@
             everything on this device". In the iPhone app, this also removes the second copy, shared files, pending shared listings and scheduled reminders.
             Deleting the app removes its data too, unless you restore a device backup.
           </li>
-          <li><strong>Back up:</strong> you can download a backup of your deals at any time. We keep no copy.</li>
+          <li><strong>Back up:</strong> you can download a backup of your deals. This does not remove any cloud copy you separately approved for sync.</li>
           <li><strong>Subscription:</strong> manage or cancel it in iOS Settings, under your name and then Subscriptions. Apple handles refunds.</li>
           <li>
-            <strong>Questions or requests:</strong> email <a href="mailto:contact@universalaillc.com">contact@universalaillc.com</a>. Your vehicle records stay
-            on your device. If you contact us, support can read your sender address and the message you choose to send. We can also help with questions about
-            the subscription records RevenueCat keeps for this app, including an account connection you approved where that feature is enabled.
+            <strong>Questions or requests:</strong> email <a href="mailto:contact@universalaillc.com">contact@universalaillc.com</a>. Your local-only vehicle
+            records stay on your device; selected sync records also have private server copies. If you contact us, support can read your sender address and the
+            message you choose to send. We can also help with questions about the subscription records RevenueCat keeps for this app, including an account
+            connection you approved where that feature is enabled.
           </li>
         </ul>
       </section>
