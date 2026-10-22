@@ -1,0 +1,1 @@
+import{r as e,j as x}from"./index-DsvdKjZt.js";const t=e.createContext(null);function i({attachments:r,now:o,today:s,children:u}){const n=e.useMemo(()=>({attachments:r,now:o,today:s}),[r,o,s]);return x.jsx(t.Provider,{value:n,children:u})}const l=()=>e.useContext(t);export{i as S,l as u};

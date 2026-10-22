@@ -1,1 +1,0 @@
-import{j as a,c as t}from"./index-D7Aoc1a6.js";function o({url:r,size:e,className:s}){return a.jsx("span",{className:t("cover-thumb",`cover-thumb--${e}`,s),"aria-hidden":"true","data-cover-thumb":"",children:a.jsx("img",{src:r,alt:"",decoding:"async",draggable:!1})})}export{o as C};

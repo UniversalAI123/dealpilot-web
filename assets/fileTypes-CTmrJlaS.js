@@ -1,0 +1,1 @@
+const i=/^image\/(png|jpe?g|pjpeg|gif|webp|avif|bmp|heic|heif|tiff?)$/;function t(e){return(e??"").split(";")[0].trim().toLowerCase()}function a(e){return i.test(t(e))}function n(e){return a(e)||t(e)==="application/pdf"}export{n as a,t as b,a as i};
