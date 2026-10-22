@@ -1,0 +1,1 @@
+const a={found:"Found",contacted:"Contacted",viewing:"Viewing arranged",offer_made:"Offer made"};function n(e){var r,t;if(e.state==="purchased"||e.state==="sold")return"Purchased";if(e.state==="passed")return"Passed";const s=(t=(r=e.purchasePlan)==null?void 0:r.sellerProgress)==null?void 0:t.stage;return s?a[s]:"Progress not recorded"}export{a as S,n as s};

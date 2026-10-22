@@ -1,0 +1,1 @@
+function t(a){return null}function i(a,e){const n=t();return n?n+(/^https:\/\/[a-z0-9]{20}\.supabase\.co$/.test(n)?"/functions/v1/dealpilot-api/api":"/api"):null}const o=t(),r=i();export{r as D,o as a};

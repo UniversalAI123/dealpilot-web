@@ -1,0 +1,1 @@
+const n="On-device model (Apple Intelligence)",i="Read on iPhone with Apple Intelligence — confirm each value",t="Apple Intelligence is reading the text on this iPhone. Nothing is sent.";function o(e){return typeof e=="string"&&e.includes(`Source: ${n}`)}export{t as O,n as a,i as b,o as i};

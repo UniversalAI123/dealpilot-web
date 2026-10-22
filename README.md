@@ -1,3 +1,3 @@
 # DealPilot — static build
 
-Built output only (source is private). Serving source commit `c488b1a`, deployed by `scripts/deploy-pages.sh`.
+Built output only (source is private). Serving source commit `d7f21fe`, deployed by `scripts/deploy-pages.sh`.
