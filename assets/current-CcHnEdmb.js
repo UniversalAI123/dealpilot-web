@@ -1,0 +1,1 @@
+import{a1 as t}from"./index-CqNFUNKL.js";function a(i,e){if(!e||e.dealId!==i.id||e.mode!==i.mode||e.engine.mode!==i.mode)return null;const n=Date.parse(e.computedAt),o=Date.parse(i.updatedAt);return Number.isFinite(n)&&Number.isFinite(o)&&n>=o&&t(e,i)?e:null}export{a as c};

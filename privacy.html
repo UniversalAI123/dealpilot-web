@@ -17,7 +17,7 @@
     <meta name="robots" content="noindex, nofollow" />
     <meta
       name="description"
-      content="DealPilot's privacy policy: optional pilot accounts, no ads, no tracking. Deals are private by default; optional selected-deal cloud sync requires approval. What can leave your device, and when."
+      content="DealPilot's privacy policy: optional accounts, vehicle history reports from VINData, no ads, no tracking. Deals are private by default; optional selected-deal cloud sync requires approval. What can leave your device, and when."
     />
     <link
       rel="icon"
@@ -398,17 +398,18 @@
     </header>
 
     <main id="main" class="wrap">
-      <p class="eyebrow">Privacy policy · Effective October 21, 2026</p>
+      <p class="eyebrow">Privacy policy · Effective October 23, 2026</p>
       <h1>Your data, your choices</h1>
       <p class="lede">
-        DealPilot has no ads or tracking. Optional pilot accounts and licensed market lookups operate only when a dedicated server is configured. This policy
+        DealPilot has no ads or tracking. Optional accounts, vehicle history reports and licensed market lookups operate only when a dedicated server is configured. This policy
         covers the DealPilot iPhone app and the DealPilot web version. It lists everything that can leave your device, and when.
       </p>
 
       <section class="card card--accent" aria-labelledby="short">
         <h2 id="short">In short</h2>
         <ul class="facts">
-          <li>Optional pilot sign-in; selected-deal cloud sync requires separate approval</li>
+          <li>Optional email-code sign-in, needed only for vehicle history reports and other account features; selected-deal cloud sync requires separate approval</li>
+          <li>A vehicle history report sends the VIN you entered, and nothing else, to VINData, an approved NMVTIS data provider, only when you tap Run</li>
           <li>No ads</li>
           <li>No advertising analytics</li>
           <li>No tracking</li>
@@ -417,7 +418,7 @@
         </ul>
         <p class="muted small">
           Purchases start with an anonymous RevenueCat app ID. If an approved subscription connection is enabled and you choose it, a random purchase identifier
-          links the subscription to your pilot account. Optional sign-in collects an email and account identifier; deliberate market searches send the fields
+          links the subscription to your account. Optional sign-in collects an email and account identifier; deliberate market searches send the fields
           described below.
         </p>
       </section>
@@ -657,6 +658,15 @@
             <p class="flow__row"><span class="caption">When</span> <span>Only when you tap the recall lookup link. It opens in your browser.</span></p>
           </li>
           <li class="flow">
+            <p class="flow__name">VINData, an Approved NMVTIS Data Provider (vehicle history reports)</p>
+            <p class="flow__row"><span class="caption">Where</span> <span class="mono">api.vindata.com</span>, through our account server</p>
+            <p class="flow__row"><span class="caption">What</span> <span>The VIN you entered, and nothing else. Your account’s report credit or included report is recorded on our server.</span></p>
+            <p class="flow__row">
+              <span class="caption">When</span>
+              <span>Only when you tap Run after the consent list, and when you choose Run again. The facts stay on your device for 90 days with a link to the VINData-branded report.</span>
+            </p>
+          </li>
+          <li class="flow">
             <p class="flow__name">Listing links you save</p>
             <p class="flow__row"><span class="caption">What</span> <span>Nothing. DealPilot never fetches them.</span></p>
             <p class="flow__row"><span class="caption">When</span> <span>A saved link opens in your browser only when you tap it.</span></p>
@@ -822,18 +832,18 @@
         </p>
       </section>
       <section class="policy-section">
-        <h2>Optional pilot accounts, sync and market comparisons</h2>
+        <h2>Optional accounts, vehicle history reports, sync and market comparisons</h2>
         <p>
-          Only in a separately configured pilot, requesting a sign-in code sends your email to the DealPilot account server and Supabase Auth. Entering that
+          Requesting a sign-in code sends your email to the DealPilot account server and Supabase Auth. Entering that
           code starts a session kept in app memory; reopening requires another sign-in. The account API is hosted at iswogafkugrpcxgvtpvf.supabase.co.
-          Authentication email is delivered through Resend. Public account creation remains disabled in the current private pilot.
+          Authentication email is delivered through Resend. You can create an account with any email address you control; the account exists to tie report purchases and included reports to you so they can be re-opened. You can delete it in Settings › Account › Delete account; a fresh code confirms the deletion, which removes the account, its purchase link and its report and usage records on our server (it does not cancel an Apple subscription).
         </p>
         <p>
           The account server limits code requests, verification attempts and session refreshes across its running instances. Its short-lived security counters
           use keyed digests of the email or refresh token, an action, a count and a window end; they do not store the raw email, token, code or IP address.
           Subject counters expire after one minute and are removed during requests or by a cleanup scheduled every five minutes while the database runs. Cleanup
           may wait if the project is paused. The global counter has no person identifier. This cleanup job keeps seven days of its operational history. Supabase
-          service logs and backups have separate retention. Authentication email delivery is enabled for the private pilot.
+          service logs and backups have separate retention.
         </p>
         <p>
           A market lookup sends the authenticated account ID and the requested model year, make/model/trim, ZIP and radius to our server. MarketCheck receives
@@ -843,10 +853,14 @@
           another provider call. Signing out, restarting or deleting local data clears that temporary cache.
         </p>
         <p>
-          In a later enabled version, a vehicle-history summary sends the VIN to our server and VinAudit. It does not send your complete deal or attachments.
-          Only when licensed storage is allowed, private completed lookup results may be recoverable for 24 hours. Expired copies are unavailable and are
-          removed by maintenance while the database runs; project pauses can delay physical cleanup. Provider records and backups have separate retention.
-          History coverage can be incomplete and does not verify a clean title or safe condition.
+          A vehicle history report sends the VIN you entered, and nothing else, to our server and to VINData (VIN Data Products LLC, an Approved NMVTIS Data
+          Provider) only when you tap Run after the consent list. It does not send your deal, photos, attachments or location. VINData returns title and brand
+          records, junk, salvage and total-loss records, odometer readings, theft and lien records, and a link to its branded report. The facts are shown in
+          the app for 90 days and kept only on your device (inside the app’s own storage, which your iPhone’s backup includes); after 90 days they are removed
+          and only “checked on” remains until you run the report again. Our server keeps the request identifier and the credit or included report it used,
+          so a report that was paid for can be re-opened and so no report is charged twice. Only when licensed storage is allowed, private completed results
+          may be recoverable for 24 hours. Provider records and backups have separate retention. History coverage can be incomplete and does not verify a
+          clean title or safe condition; the NMVTIS Consumer Access Product Disclaimer is shown with every report.
         </p>
         <p>
           Optional saved searches store the chosen vehicle, ZIP, radius, seller type, price/mileage limits and daily-check approval privately in your account.
