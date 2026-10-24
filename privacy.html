@@ -398,18 +398,24 @@
     </header>
 
     <main id="main" class="wrap">
-      <p class="eyebrow">Privacy policy · Effective October 23, 2026</p>
+      <p class="eyebrow">Privacy policy · Effective October 24, 2026</p>
       <h1>Your data, your choices</h1>
       <p class="lede">
-        DealPilot has no ads or tracking. Optional accounts, vehicle history reports and licensed market lookups operate only when a dedicated server is configured. This policy
-        covers the DealPilot iPhone app and the DealPilot web version. It lists everything that can leave your device, and when.
+        DealPilot has no ads or tracking. Optional accounts, vehicle history reports and licensed market lookups operate only when a dedicated server is
+        configured. This policy covers the DealPilot iPhone app and the DealPilot web version. It lists everything that can leave your device, and when.
       </p>
 
       <section class="card card--accent" aria-labelledby="short">
         <h2 id="short">In short</h2>
         <ul class="facts">
-          <li>Optional email-code sign-in, needed only for vehicle history reports and other account features; selected-deal cloud sync requires separate approval</li>
+          <li>
+            Optional email-code sign-in, needed only for vehicle history reports and other account features; selected-deal cloud sync requires separate approval
+          </li>
           <li>A vehicle history report sends the VIN you entered, and nothing else, to VINData, an approved NMVTIS data provider, only when you tap Run</li>
+          <li>
+            Optional cloud screenshot reading sends one image to OpenAI only after sign-in and your approval for that image. On-device text reading stays on
+            your iPhone.
+          </li>
           <li>No ads</li>
           <li>No advertising analytics</li>
           <li>No tracking</li>
@@ -660,10 +666,16 @@
           <li class="flow">
             <p class="flow__name">VINData, an Approved NMVTIS Data Provider (vehicle history reports)</p>
             <p class="flow__row"><span class="caption">Where</span> <span class="mono">api.vindata.com</span>, through our account server</p>
-            <p class="flow__row"><span class="caption">What</span> <span>The VIN you entered, and nothing else. Your account’s report credit or included report is recorded on our server.</span></p>
+            <p class="flow__row">
+              <span class="caption">What</span>
+              <span>The VIN you entered, and nothing else. Your account’s report credit or included report is recorded on our server.</span>
+            </p>
             <p class="flow__row">
               <span class="caption">When</span>
-              <span>Only when you tap Run after the consent list, and when you choose Run again. The facts stay on your device for 90 days with a link to the VINData-branded report.</span>
+              <span
+                >Only when you tap Run after the consent list, and when you choose Run again. The facts stay on your device for 90 days with a link to the
+                VINData-branded report.</span
+              >
             </p>
           </li>
           <li class="flow">
@@ -753,8 +765,12 @@
           <li><strong>Camera:</strong> used only when you tap Scan, to read the VIN barcode. The image is read on your iPhone. Nothing is recorded or sent.</li>
           <li>
             <strong>Photos and screenshots:</strong> you pick them with the system photo picker, so DealPilot sees only what you choose and never asks for
-            access to your library. When DealPilot reads text from a screenshot in the iPhone app, it does so on your iPhone. Text reading itself does not
-            upload the image. A supported file you deliberately include in selected-deal sync can be uploaded after separate approval.
+            access to your library. “Read this screenshot” uses Apple text recognition on your iPhone without uploading the image. Optional “Read with cloud AI”
+            requires sign-in and approval for each image. It sends the whole chosen screenshot through DealPilot’s Supabase backend to
+            <a href="https://api.openai.com">OpenAI (GPT-6 Luna)</a>. Screenshots may include vehicle details, VINs, location or contact information; crop out
+            private information first. Cloud results require your review. DealPilot does not retain the image or raw response on its server, and requests OpenAI
+            response storage be disabled; OpenAI abuse-monitoring retention may still apply. Account IDs and usage counters enforce limits. A supported file you
+            deliberately include in selected-deal sync can be uploaded after separate approval.
           </li>
           <li>
             <strong>Notifications:</strong> deadline reminders are scheduled on your iPhone. Permission is asked only when you turn one on. A reminder shows the
@@ -834,9 +850,11 @@
       <section class="policy-section">
         <h2>Optional accounts, vehicle history reports, sync and market comparisons</h2>
         <p>
-          Requesting a sign-in code sends your email to the DealPilot account server and Supabase Auth. Entering that
-          code starts a session kept in app memory; reopening requires another sign-in. The account API is hosted at iswogafkugrpcxgvtpvf.supabase.co.
-          Authentication email is delivered through Resend. You can create an account with any email address you control; the account exists to tie report purchases and included reports to you so they can be re-opened. You can delete it in Settings › Account › Delete account; a fresh code confirms the deletion, which removes the account, its purchase link and its report and usage records on our server (it does not cancel an Apple subscription).
+          Requesting a sign-in code sends your email to the DealPilot account server and Supabase Auth. Entering that code starts a session kept in app memory;
+          reopening requires another sign-in. The account API is hosted at iswogafkugrpcxgvtpvf.supabase.co. Authentication email is delivered through Resend.
+          You can create an account with any email address you control; the account exists to tie report purchases and included reports to you so they can be
+          re-opened. You can delete it in Settings › Account › Delete account; a fresh code confirms the deletion, which removes the account, its purchase link
+          and its report and usage records on our server (it does not cancel an Apple subscription).
         </p>
         <p>
           The account server limits code requests, verification attempts and session refreshes across its running instances. Its short-lived security counters
@@ -855,12 +873,12 @@
         <p>
           A vehicle history report sends the VIN you entered, and nothing else, to our server and to VINData (VIN Data Products LLC, an Approved NMVTIS Data
           Provider) only when you tap Run after the consent list. It does not send your deal, photos, attachments or location. VINData returns title and brand
-          records, junk, salvage and total-loss records, odometer readings, theft and lien records, and a link to its branded report. The facts are shown in
-          the app for 90 days and kept only on your device (inside the app’s own storage, which your iPhone’s backup includes); after 90 days they are removed
-          and only “checked on” remains until you run the report again. Our server keeps the request identifier and the credit or included report it used,
-          so a report that was paid for can be re-opened and so no report is charged twice. Only when licensed storage is allowed, private completed results
-          may be recoverable for 24 hours. Provider records and backups have separate retention. History coverage can be incomplete and does not verify a
-          clean title or safe condition; the NMVTIS Consumer Access Product Disclaimer is shown with every report.
+          records, junk, salvage and total-loss records, odometer readings, theft and lien records, and a link to its branded report. The facts are shown in the
+          app for 90 days and kept only on your device (inside the app’s own storage, which your iPhone’s backup includes); after 90 days they are removed and
+          only “checked on” remains until you run the report again. Our server keeps the request identifier and the credit or included report it used, so a
+          report that was paid for can be re-opened and so no report is charged twice. Only when licensed storage is allowed, private completed results may be
+          recoverable for 24 hours. Provider records and backups have separate retention. History coverage can be incomplete and does not verify a clean title
+          or safe condition; the NMVTIS Consumer Access Product Disclaimer is shown with every report.
         </p>
         <p>
           Optional saved searches store the chosen vehicle, ZIP, radius, seller type, price/mileage limits and daily-check approval privately in your account.
