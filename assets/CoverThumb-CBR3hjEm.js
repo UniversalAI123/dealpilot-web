@@ -1,0 +1,1 @@
+import{M as a,Q as t}from"./index-CPG02sRb.js";function o({url:r,size:e,className:s}){return a.jsx("span",{className:t("cover-thumb",`cover-thumb--${e}`,s),"aria-hidden":"true","data-cover-thumb":"",children:a.jsx("img",{src:r,alt:"",decoding:"async",draggable:!1})})}export{o as C};

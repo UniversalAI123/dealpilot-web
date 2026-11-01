@@ -1,1 +1,0 @@
-import{cS as o,cT as c,cP as e,bS as n}from"./index-XCX5ZHgz.js";function r(t,a){return t==="native"&&a==="https://iswogafkugrpcxgvtpvf.supabase.co"}const s=r(e,c)?o:null;function A(t={}){return t.staticDeploy===void 0?!n()||s!==null:!t.staticDeploy}export{s as C,A as e};
