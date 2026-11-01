@@ -398,7 +398,7 @@
     </header>
 
     <main id="main" class="wrap">
-      <p class="eyebrow">Privacy policy · Effective October 26, 2026</p>
+      <p class="eyebrow">Privacy policy · Effective October 30, 2026</p>
       <h1>Your data, your choices</h1>
       <p class="lede">
         DealPilot has no ads or tracking. Optional accounts, vehicle history reports and licensed market lookups operate only when a dedicated server is
@@ -413,8 +413,8 @@
           </li>
           <li>A vehicle history report sends the VIN you entered, and nothing else, to VINData, an approved NMVTIS data provider, only when you tap Run</li>
           <li>
-            Optional cloud screenshot reading sends one image to OpenAI only after sign-in and your approval for that image. On-device text reading stays on
-            your iPhone.
+            Optional cloud AI sends one selected screenshot or the exact seller-message text you review to OpenAI only after sign-in and separate approval for
+            that request. On-device text reading stays on your iPhone.
           </li>
           <li>No ads</li>
           <li>No advertising analytics</li>
@@ -777,6 +777,16 @@
             deliberately include in selected-deal sync can be uploaded after separate approval.
           </li>
           <li>
+            <strong>Seller Chat Assistant:</strong> pasted messages and on-device screenshot text remain in the current review until you explicitly approve
+            sending the exact preview to OpenAI through DealPilot's Supabase backend. This request sends text only, not the screenshot, your budget or deal
+            files. Detected phone numbers, emails, links and street addresses are removed on device; automated removal can be incomplete and names or other
+            private information may remain. Review and remove it before approval. The complete chat is not saved by this flow. Only quotes and findings you
+            select can become saved deal records, which then follow the deal's backup, deletion and separately approved sync controls. Reply drafts are local
+            and editable; copying or sharing needs your review and never sends a message automatically. DealPilot does not retain the chat text or raw AI
+            response on its server. OpenAI response storage is disabled for the request, but provider abuse-monitoring retention may still apply. The same
+            account-linked usage counters and shared cloud allowance apply.
+          </li>
+          <li>
             <strong>Notifications:</strong> deadline reminders are scheduled on your iPhone. Permission is asked only when you turn one on. A reminder shows the
             deal's name and the recorded deadline or follow-up date. It does not contact a seller or book an appointment.
           </li>
@@ -877,15 +887,15 @@
         <p>
           A vehicle history report sends the VIN you entered, and nothing else, to our server and to VINData (VIN Data Products LLC, an Approved NMVTIS Data
           Provider) only when you tap Run after the consent list. It does not send your deal, photos, attachments or location. VINData returns title and brand
-          records, junk, salvage and total-loss records, odometer readings, reported liens, recovered thefts, exports and tows, and a link to its branded report.
-          Active thefts are never included in reports under VINData’s data agreement. The facts are shown in the
-          app for 90 days and kept only on your device (inside the app’s own storage, which your iPhone’s backup includes); after 90 days they are removed and
-          only “checked on” remains until you run the report again. Our server keeps the request identifier and the credit or included report it used, so a
-          report that was paid for can be re-opened and so no report is charged twice. Only when licensed storage is allowed, private completed results may be
-          recoverable for 24 hours. If VINData notifies us within that window that a VIN you checked is reported as an active theft, we may use that record
-          only to email you once, at your account address, so you can contact law enforcement before you buy; we do not share it with anyone else.
-          Provider records and backups have separate retention. History coverage can be incomplete and does not verify a clean title
-          or safe condition; the NMVTIS Consumer Access Product Disclaimer is shown with every report.
+          records, junk, salvage and total-loss records, odometer readings, reported liens, recovered thefts, exports and tows, and a link to its branded
+          report. Active thefts are never included in reports under VINData’s data agreement. The facts are shown in the app for 90 days and kept only on your
+          device (inside the app’s own storage, which your iPhone’s backup includes); after 90 days they are removed and only “checked on” remains until you run
+          the report again. Our server keeps the request identifier and the credit or included report it used, so a report that was paid for can be re-opened
+          and so no report is charged twice. Only when licensed storage is allowed, private completed results may be recoverable for 24 hours. If VINData
+          notifies us within that window that a VIN you checked is reported as an active theft, we may use that record only to email you once, at your account
+          address, so you can contact law enforcement before you buy; we do not share it with anyone else. Provider records and backups have separate retention.
+          History coverage can be incomplete and does not verify a clean title or safe condition; the NMVTIS Consumer Access Product Disclaimer is shown with
+          every report.
         </p>
         <p>
           Optional saved searches store the chosen vehicle, ZIP, radius, seller type, price/mileage limits and daily-check approval privately in your account.
