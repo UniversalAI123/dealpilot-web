@@ -1,0 +1,1 @@
+import{a9 as n}from"./index-BbqgQl_T.js";function f(){var e;return typeof((e=n())==null?void 0:e.exportPdf)=="function"}async function i(e,t=typeof window>"u"?void 0:window){const r=n();if(r!=null&&r.exportPdf)try{return await r.exportPdf(e)}catch{return"failed"}if(!t)return"unavailable";try{return t.print(),"printed"}catch{return"failed"}}export{f as c,i as e};
