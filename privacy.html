@@ -398,7 +398,7 @@
     </header>
 
     <main id="main" class="wrap">
-      <p class="eyebrow">Privacy policy · Effective October 30, 2026</p>
+      <p class="eyebrow">Privacy policy · Effective November 2, 2026</p>
       <h1>Your data, your choices</h1>
       <p class="lede">
         DealPilot has no ads or tracking. Optional accounts, vehicle history reports and licensed market lookups operate only when a dedicated server is
@@ -864,18 +864,21 @@
       <section class="policy-section">
         <h2>Optional accounts, vehicle history reports, sync and market comparisons</h2>
         <p>
-          Requesting a sign-in code sends your email to the DealPilot account server and Supabase Auth. Entering that code starts a session kept in app memory;
-          reopening requires another sign-in. The account API is hosted at iswogafkugrpcxgvtpvf.supabase.co. Authentication email is delivered through Resend.
-          You can create an account with any email address you control; the account exists to tie report purchases and included reports to you so they can be
-          re-opened. You can delete it in Settings › Account › Delete account; a fresh code confirms the deletion, which removes the account, its purchase link
-          and its report and usage records on our server (it does not cancel an Apple subscription).
+          Requesting a sign-in code sends your email to the DealPilot account server and Supabase Auth. Where password sign-in is enabled, an existing account
+          can instead send its email and password through the same account server to Supabase Auth for verification. The app does not save the password or
+          include it in diagnostics, deal files or backups. Supabase manages the account credential. The active session is kept in app memory; on iPhone, a
+          refresh credential can be kept in Keychain to restore that session after reopening. Signing out removes the saved session credential. The account API
+          is hosted at iswogafkugrpcxgvtpvf.supabase.co. Authentication email is delivered through Resend. You can create an account with any email address you
+          control; the account exists to tie report purchases and included reports to you so they can be re-opened. You can delete it in Settings › Account ›
+          Delete account; a fresh code confirms the deletion, which removes the account, its purchase link and its report and usage records on our server (it
+          does not cancel an Apple subscription).
         </p>
         <p>
-          The account server limits code requests, verification attempts and session refreshes across its running instances. Its short-lived security counters
-          use keyed digests of the email or refresh token, an action, a count and a window end; they do not store the raw email, token, code or IP address.
-          Subject counters expire after one minute and are removed during requests or by a cleanup scheduled every five minutes while the database runs. Cleanup
-          may wait if the project is paused. The global counter has no person identifier. This cleanup job keeps seven days of its operational history. Supabase
-          service logs and backups have separate retention.
+          The account server limits code requests, verification attempts and session refreshes across its running instances. Password and email-code
+          verification share the same attempt limits. Its short-lived security counters use keyed digests of the email or refresh token, an action, a count and
+          a window end; they do not store the raw email, token, code or IP address. Subject counters expire after one minute and are removed during requests or
+          by a cleanup scheduled every five minutes while the database runs. Cleanup may wait if the project is paused. The global counter has no person
+          identifier. This cleanup job keeps seven days of its operational history. Supabase service logs and backups have separate retention.
         </p>
         <p>
           A market lookup sends the authenticated account ID and the requested model year, make/model/trim, ZIP and radius to our server. MarketCheck receives
