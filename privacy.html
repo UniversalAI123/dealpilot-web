@@ -398,7 +398,7 @@
     </header>
 
     <main id="main" class="wrap">
-      <p class="eyebrow">Privacy policy · Effective November 2, 2026</p>
+      <p class="eyebrow">Privacy policy · Effective November 3, 2026</p>
       <h1>Your data, your choices</h1>
       <p class="lede">
         CurbWhiz has no ads or tracking. Optional accounts, vehicle history reports and licensed market lookups operate only when a dedicated server is
@@ -752,12 +752,14 @@
       </section>
 
       <section class="card" aria-labelledby="device">
-        <h2 id="device">Camera, photos and notifications</h2>
+        <h2 id="device">Camera, photos, Bluetooth and notifications</h2>
         <p>
-          In a build with optional scanner support, entering your own private Wi-Fi OBD adapter address and confirming the parked vehicle starts fixed read-only
-          requests over your local Wi-Fi. No code-clearing or ECU-write command is offered. Readings stay on the device unless you save them and separately
-          approve syncing that deal. Physical adapter compatibility must be checked; this does not provide Bluetooth scanner or manufacturer-specific ECU
-          coverage.
+          Optional scanner support connects to your own compatible OBD2 adapter over local Wi-Fi or Bluetooth Low Energy (BLE). Wi-Fi reads use the private
+          adapter address and port you enter. Bluetooth discovery requires iOS Bluetooth permission and displays nearby supported adapters' advertised names,
+          local identifiers and signal strength on this iPhone; discovery does not send those details to our cloud services. After you choose your adapter and
+          confirm that the vehicle is parked and you have permission, the app sends fixed read-only standard diagnostic requests. No code-clearing or ECU-write
+          command is offered. Readings stay on the device unless you save them and separately approve syncing that deal. Physical adapter compatibility varies;
+          Bluetooth Classic, MFi adapters and enhanced manufacturer-specific diagnostics are not promised.
         </p>
         <p>
           Optional saved-search push notifications require separate iPhone permission and an enabled Apple push service. Registration sends an Apple device
@@ -849,8 +851,10 @@
       <section class="card" aria-labelledby="security">
         <h2 id="security">Security</h2>
         <p>
-          Your deals are protected by your device's own security, such as your passcode and iOS data protection. Every network request CurbWhiz makes uses
-          HTTPS.
+          Your deals are protected by your device's own security, such as your passcode and iOS data protection. Connections to CurbWhiz's cloud services and
+          external web APIs use HTTPS. The local Wi-Fi OBD adapter connection uses the adapter's TCP protocol without HTTPS/TLS encryption; use only your own
+          adapter and a trusted local network. CurbWhiz does not add its own encryption layer to local Wi-Fi or Bluetooth adapter traffic. Bluetooth link
+          protection depends on the adapter and iOS.
         </p>
       </section>
 
