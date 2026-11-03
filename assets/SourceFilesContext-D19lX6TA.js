@@ -1,1 +1,0 @@
-import{G as e,M as x}from"./index-CTY3lhb4.js";const t=e.createContext(null);function i({attachments:o,now:r,today:s,children:u}){const n=e.useMemo(()=>({attachments:o,now:r,today:s}),[o,r,s]);return x.jsx(t.Provider,{value:n,children:u})}const l=()=>e.useContext(t);export{i as S,l as u};

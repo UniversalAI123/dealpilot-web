@@ -1,6 +1,6 @@
 {
-  "name": "DealPilot — check the deal before you buy",
-  "short_name": "DealPilot",
+  "name": "CurbWhiz — check the deal before you buy",
+  "short_name": "CurbWhiz",
   "description": "Work out the all-in cost and the most you can pay for a used car, with every assumption shown. Saved on your device.",
   "start_url": "./#/",
   "scope": "./",

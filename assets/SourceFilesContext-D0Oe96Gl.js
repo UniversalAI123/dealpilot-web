@@ -1,0 +1,1 @@
+import{v as e,z as x}from"./index-BAkKgaYp.js";const t=e.createContext(null);function i({attachments:o,now:r,today:s,children:u}){const n=e.useMemo(()=>({attachments:o,now:r,today:s}),[o,r,s]);return x.jsx(t.Provider,{value:n,children:u})}const l=()=>e.useContext(t);export{i as S,l as u};

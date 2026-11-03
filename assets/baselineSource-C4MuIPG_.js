@@ -1,0 +1,1 @@
+import{aN as n}from"./index-BAkKgaYp.js";const s=new WeakMap,t=a=>n({...a,state:"draft"});function r(a,e){s.set(a,t(e))}function c(a,e){try{return s.has(a)&&s.get(a)===t(e)}catch{return!1}}export{c as a,r as b};
