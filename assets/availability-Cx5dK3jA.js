@@ -1,1 +1,0 @@
-import{cw as o,cx as c,cq as e,bZ as n}from"./index-BAkKgaYp.js";function r(t,a){return t==="native"&&a==="https://iswogafkugrpcxgvtpvf.supabase.co"}const s=r(e,c)?o:null;function A(t={}){return t.staticDeploy===void 0?!n()||s!==null:!t.staticDeploy}export{s as C,A as e};

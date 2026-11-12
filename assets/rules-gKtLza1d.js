@@ -1,1 +1,0 @@
-const e={yearTolerance:1,mileageStrongMaxDiff:15e3,mileagePartialMaxDiff:4e4,staleAfterDays:90,adequateMinIncluded:5,adequateMinStrong:3,adequateNewestMaxDays:60,limitedMinIncluded:3,marketAreaMiles:250,outlierMinCount:4,outlierIqrMultiplier:"1.5",futureDateToleranceDays:1,minVinKeyLength:11},a="Asking and last-listed prices are not completed sale prices";export{e as C,a as L};
